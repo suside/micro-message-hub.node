@@ -1,5 +1,7 @@
 /.idea
 /src
 /.babelrc
+/.codeclimate.yml
 /.editorconfig
+/.eslint*
 /.gitignore

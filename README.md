@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/witoldsz/micro-message-hub.node.svg?branch=master)](https://travis-ci.org/witoldsz/micro-message-hub.node) [![npm](https://img.shields.io/npm/v/micro-message-hub.svg?maxAge=2592000)](https://www.npmjs.com/package/micro-message-hub)
+[![Build Status](https://travis-ci.org/witoldsz/micro-message-hub.node.svg?branch=master)](https://travis-ci.org/witoldsz/micro-message-hub.node)
+[![npm](https://img.shields.io/npm/v/micro-message-hub.svg?maxAge=2592000)](https://www.npmjs.com/package/micro-message-hub)
+[![Code Climate](https://codeclimate.com/github/witoldsz/micro-message-hub.node/badges/gpa.svg)](https://codeclimate.com/github/witoldsz/micro-message-hub.node)
 
 Micro Message Hub
 ===
