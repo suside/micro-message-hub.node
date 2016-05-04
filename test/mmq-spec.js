@@ -10,11 +10,12 @@ const DELIVERY_MODE_NON_PERSISTENT = 1;
 
 describe('micro message queues with real AMQP server', () => {
 
+  const amqpUrl = process.env.AMQP_URL || 'amqp://localhost';
   let mmq1, mmq2;
   let amqpConnection, amqpChannel;
 
   before(() => {
-    return amqp.connect()
+    return amqp.connect(amqpUrl)
       .then(conn => {amqpConnection = conn; return conn.createChannel();})
       .then((chan) => {amqpChannel = chan;});
   });
@@ -27,8 +28,8 @@ describe('micro message queues with real AMQP server', () => {
         amqpChannel.deleteQueue('mmq2:queries')
       ])
       .then(() => {
-        mmq1 = new MicroMessageQueues({moduleName: 'mmq1', options: {log: new NoopLogger()}});
-        mmq2 = new MicroMessageQueues({moduleName: 'mmq2', options: {log: new NoopLogger()}});
+        mmq1 = new MicroMessageQueues({moduleName: 'mmq1', url: amqpUrl, options: {log: new NoopLogger()}});
+        mmq2 = new MicroMessageQueues({moduleName: 'mmq2', url: amqpUrl, options: {log: new NoopLogger()}});
         return Promise.all([mmq1.connect(), mmq2.connect()])
       })
   });
